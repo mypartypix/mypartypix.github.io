@@ -1,0 +1,17 @@
+title: MyPartyPix
+email: your-email@domain.com
+description: >
+  Pocket Rocket is a full-service advertising agency in Manila. Helping you create impactful customer experiences.
+url:
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+sass:
+  style: compressed

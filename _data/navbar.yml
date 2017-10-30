@@ -1,0 +1,28 @@
+- id: 1
+  title: "Gallery"
+  slugID:
+
+- id: 2
+  title: "Packages"
+  slugID:
+
+- id: 3
+  title: "Services"
+  slugID:
+
+- id: 4
+  image:  "/img/brand-logo.png"
+  slugID:
+
+- id: 5
+  title: "Own-A-Booth"
+  slugID:
+
+- id: 6
+  title: "About Us"
+  slugID:
+
+- id: 7
+  title: "Contact Us"
+  slugID:
+

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container no-gutter">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <a class="navbar-brand hidden-lg hidden-md" href="/">
+            <img class="brand-logo" src="/img/brand-logo.png"/>
+        </a>
+        <button type="button" id="icon-transition" class="navbar-toggle toggle-menu menu-right" data-toggle="collapse" data-target="#navbar-right-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-right-collapse">
+        <ul class="nav navbar-nav">
+            {% for navbarMenu in site.data.navbar %}
+            {% if navbarMenu.id != 4 %}
+            <li {% if page.url == navbarMenu.url %} class="navbar-menu active-menu"  {% else %} class="navbar-menu" {% endif %}>
+                <a  href="{{ navbarMenu.url }}">{{ navbarMenu.title | upcase }}</a>
+            </li>
+            {% else %}
+            <li class="navbar-brand-logo hidden-sm hidden-xs" {% if page.url !="/" %} style="display: block"{% endif %}>
+                <a href="{{ navbarMenu.url }}">
+                    <img src="{{ navbarMenu.image }}" class="brand-logo"/>
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+        </ul>
+    </div>
+</div>
+</nav>
