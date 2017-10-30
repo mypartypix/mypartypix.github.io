@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="navbar-right-collapse">
         <ul class="nav navbar-nav">
             {% for navbarMenu in site.data.navbar %}
-            {% if navbarMenu.id != 4 %}
+            {% if navbarMenu.id != 3 %}
             <li {% if page.url == navbarMenu.url %} class="navbar-menu active-menu"  {% else %} class="navbar-menu" {% endif %}>
                 <a  href="{{ navbarMenu.url }}">{{ navbarMenu.title | upcase }}</a>
             </li>
