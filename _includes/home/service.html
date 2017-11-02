@@ -3,11 +3,11 @@
         <header class="header">OUR SERVICES</header>
     </div>
     <div class="content-section">
-        {% for whyus in site.data.whyus %}
+        {% for service in site.data.service %}
         <div class="col-md-4">
-            <span class="icon-section fa {{ whyus.icon }}"></span>
-            <span class="title-section">{{ whyus.title }}</span>
-            <span class="description-section">{{ whyus.description }}</span>
+            <img src="/img/service/{{ service.image }}" class="image-section img-responsive center-block"/>
+            <span class="title-section">{{ service.title }}</span>
+            <span class="description-section">{{ service.description }}</span>
         </div>
         {% endfor %}
     </div>
