@@ -1,0 +1,52 @@
+- id: 1
+  color: "f1c40f"
+  title: 2 Hours
+  price: "PHP 3,500"
+  specification-list:
+    - specification: "Unlimited shots with print for 2 hours."
+    - specification: "With Standard Backdrop."
+    - specification: "No Delivery Charge within Metro manila."
+
+- id: 2
+  color: "e67e22"
+  title: 2 Hours
+  price: "PHP 4,000"
+  specification-list:
+    - specification: "Unlimited shots with print for 2 hours."
+    - specification: "With Personalized Backdrop."
+    - specification: "No Delivery Charge within Metro Manila."
+
+- id: 3
+  color: "9b59b6"
+  title: 3 Hours
+  price: "PHP 4,500"
+  specification-list:
+    - specification: "Unlimited shots with print for 3 hours."
+    - specification: "With Personalized Backdrop."
+    - specification: "No Delivery Charge within Metro Manila."
+
+- id: 4
+  color: "3498db"
+  title: 4 hours
+  price: "PHP 5,500"
+  specification-list:
+    - specification: "Unlimited shots with print for 4 hours."
+    - specification: "With Personalized Backdrop."
+    - specification: "No Delivery Charge within Metro Manila."
+
+- id: 5
+  color: "2ecc71"
+  title: Corporate
+  price: "PHP 8,000"
+  specification-list:
+    - specification: "Unlimited shots with print for 10 hours."
+    - specification: "With Personalized Backdrop."
+    - specification: "No Delivery Charge within Metro Manila."
+
+- id: 6
+  color: "1abc9c"
+  title: Other Package
+  specification-list:
+    - specification: "Unlimited shots with print for ___ hours."
+    - specification: "With Personalized Backdrop."
+    - specification: "No Delivery Charge within Metro Manila."
