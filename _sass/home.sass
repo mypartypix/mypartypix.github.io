@@ -351,11 +351,16 @@ nav
       text-align: center
       display: block
   .content-section
-    .image-section
+    .modal-link
+      color: #3b3b3b
       display: block
-      font-size: 90px
-      margin-bottom: 30px
-      text-align: center
+      outline: none
+      text-decoration: none
+      .image-section
+        display: block
+        font-size: 90px
+        margin-bottom: 30px
+        text-align: center
     .title-section
       font-size: 22px
       text-align: center
@@ -390,6 +395,163 @@ nav
     margin-top: 30px
     margin-bottom: 30px
 
+#contact
+  position: relative
+  .left-section
+    .map-section
+      #map
+        height: 500px
+  .right-section
+    padding-top: 100px
+    padding-bottom: 100px
+    #header-section
+      #header
+        font-family: "Gotham-Book"
+        text-transform: uppercase
+        font-size: 44px
+        letter-spacing: 4px
+        text-align: center
+        display: block
+    #contact-container
+      margin-top: 30px
+      margin-left: 80px
+      ul
+        list-style: none
+        padding-left: 0
+        .contact-list
+          margin-bottom: 25px
+          .contact-icon
+            font-size: 28px
+            display: inline-block
+            vertical-align: middle
+            width: 34px
+            &#icon-2
+              font-size: 34px
+            &#icon-3
+              font-size: 24px
+          .contact-text
+            font-size: 18px
+            display: inline-block
+            vertical-align: middle
+            letter-spacing: 1px
+            margin-left: 30px
+
+
+.modal-content
+  padding: 100px 0
+  z-index: 2
+  border: none
+  border-radius: 2px
+  -webkit-box-shadow: none
+  -moz-box-shadow: none
+  box-shadow: none
+  background-color: white
+  .close-modal
+    position: absolute
+    top: 25px
+    right: 25px
+    width: 75px
+    height: 75px
+    background-color: transparent
+    cursor: pointer
+    z-index: 3
+    transition: all 300ms ease-in-out
+    .lr
+      z-index: 1051
+      width: 1px
+      height: 75px
+      margin-left: 35px
+      background-color: #222
+      -webkit-transform: rotate(45deg)
+      -ms-transform: rotate(45deg)
+      transform: rotate(45deg)
+      .rl
+        z-index: 1052
+        width: 1px
+        height: 75px
+        background-color: #222
+        -webkit-transform: rotate(90deg)
+        -ms-transform: rotate(90deg)
+        transform: rotate(90deg)
+    &:hover
+      opacity: 0.5
+    &:focus
+      outline: none
+  .modal-body
+    padding-top: 0
+    padding-bottom: 0
+    color: #3b3b3b
+    .header-section
+      &#package-header
+        padding-top: 30px
+        padding-bottom: 30px
+      .header-text
+        display: block
+        text-align: center
+        margin-top: 30px
+        margin-bottom: 45px
+        font-size: 18px
+        text-transform: uppercase
+        letter-spacing: 2px
+    .promo-content-section
+      .promo-content-list
+        margin-bottom: 30px
+        .promo-header
+          color: white
+          padding-top: 21px
+          padding-bottom: 21px
+          &#promo-header-last
+            padding-top: 33px
+            padding-bottom: 33px
+          .promo-hour
+            color: white
+            display: block
+            font-size: 24px
+            text-align: center
+            font-family: "Gotham-Bold"
+            text-transform: uppercase
+          .promo-price
+            display: block
+            font-size: 17px
+            text-align: center
+            font-family: "Gotham-Bold"
+        .promo-content
+          padding-top: 15px
+          min-height: 300px
+          background-color: #f4f4f4
+          .promo-list
+            padding-top: 20px
+            .promo-text
+              display: block
+              font-size: 16px
+    .promo-inclusion-container
+      padding: 30px
+      background-color: #f4f4f4
+      width: 970px
+      margin-left: auto
+      margin-right: auto
+      .left-section
+        .promo-list
+          padding-top: 20px
+          .promo-item
+            display: block
+            font-size: 16px
+
+      .right-section
+        .promo-list
+          padding-top: 20px
+          .promo-item
+            display: block
+            font-size: 18px
+    .bottom-text
+      margin-top: 30px
+      display: block
+      text-align: center
+      font-size: 18px
+      line-height: 24px
+
+
+
 
 footer
   position: relative
@@ -404,4 +566,12 @@ footer
       font-size: 14px
       font-family: "Gotham-Book"
       text-align: center
+
+
+@media (min-width: 1500px)
+  #contact
+    .right-section
+      #contact-container
+        margin-left: 22vh
+
 

@@ -5,10 +5,80 @@
     <div class="content-section">
         {% for service in site.data.service %}
         <div class="col-md-4">
-            <img src="/img/service/{{ service.image }}" class="image-section img-responsive center-block"/>
+            <a class="modal-link" data-toggle="modal" data-target="#modal-1">
+                <img src="/img/service/{{ service.image }}" class="image-section img-responsive center-block"/>
+            </a>
             <span class="title-section">{{ service.title }}</span>
             <span class="description-section">{{ service.description }}</span>
         </div>
+
+        <div class="modal fade"  id="modal-1" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body container">
+                    <div class="header-section">
+                        <h4 class="header">Promo Packages</h4>
+                        <span class="header-text">Free | Photo Standees | Photo With Magnet Strips</span>
+                    </div>
+
+                    <div class="promo-container clearfix">
+                        {% for promo in site.data.promo %}
+                        <div class="col-md-4">
+                            <div class="promo-content-section">
+                                <div class="promo-content-list">
+                                    <div {% if promo.id == 6 %} id="promo-header-last" {% endif %}  class="promo-header" style="background-color: #{{ promo.color }};">
+                                        <span class="promo-hour">{{ promo.title }}</span>
+                                        <span class="promo-price">{{ promo.price }}</span>
+                                    </div>
+                                    <div class="promo-content">
+                                        <ul>
+                                            {% for specification in promo.specification-list %}
+                                            <li class="promo-list">
+                                                <span class="promo-text">{{ specification.specification }}</span>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div id="package-header" class="header-section">
+                        <h4 class="header">Inclusions of All <br> Photo booth Packages</h4>
+                    </div>
+
+                    <div class="promo-inclusion-container clearfix">
+                        <div class="left-section col-md-6">
+                            <ul>
+                                {% for package in site.data.package-inclusion limit: 6 %}
+                                <li class="promo-list">
+                                    <span class="promo-item">{{ package.text }}</span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="right-section col-md-6">
+                            <ul>
+                                {% for package in site.data.package-inclusion offset: 6 %}
+                                <li class="promo-list">
+                                    <span class="promo-item">{{ package.text }}</span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="bottom-text">(For every succeeding hour on the day of the event additional P,1000.00 | For 30mins | Additional P500.00)</p>
+                </div>
+            </div>
+        </div>
         {% endfor %}
+
     </div>
 </div>
