@@ -1,0 +1,263 @@
+body
+  margin-top: 109px
+
+#gallery
+  position: relative
+  min-height: 100vh
+  .gallery-banner
+    background-image: url("/img/bg-gallery.jpg")
+    background-attachment: fixed
+    background-size: cover
+    background-position: center center
+    overflow: hidden
+    position: relative
+    .bg-overlay
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      z-index: 1
+      background-color: rgba(0,0,0,0.5)
+    .banner
+      position: relative
+      z-index: 2
+      margin: 0
+      font-family: "Gotham-Bold"
+      text-transform: uppercase
+      font-size: 54px
+      letter-spacing: 8px
+      text-align: center
+      display: block
+      color: white
+      padding: 151px 0
+
+  #gallery-list
+    .filter-container
+      padding-top: 50px
+      padding-bottom: 50px
+      .button-group
+        padding:  0
+        margin: 0 auto
+        .dropdown
+          float: left
+          display: inline-block
+          width: 15%
+          border-radius: 0
+          .btn-main
+            width: 100%
+            text-decoration: none
+            text-align: center
+            padding: 15px 0
+            border-radius: 0
+            outline: none
+            background-color: #3b3b3b !important
+            color: white !important
+            transition: all 300ms ease-in-out
+            border: none
+          .dropdown-menu
+            width: 100%
+            border-radius: 0
+            margin: 0
+            padding: 0
+            float: left
+            border: none
+          .btn-isotope
+            text-transform: uppercase
+            width: 100%
+            text-decoration: none
+            text-align: center
+            padding: 15px 0
+            border-radius: 0
+            outline: none
+            background-color: white
+            color: #3b3b3b
+            transition: all 300ms ease-in-out
+            border: none
+            &.is-checked
+              background-color: #3b3b3b
+              color: #f7f7f7
+            &:hover
+              background-color: #3b3b3b
+              color: #f7f7f7
+
+
+        .btn-isotope
+          float: left
+          display: inline-block
+          text-decoration: none
+          text-align: center
+          padding: 15px 0
+          width: 15%
+          border-radius: 0
+          outline: none
+          background-color: #3b3b3b
+          color: white
+          transition: all 300ms ease-in-out
+          border: none
+          &.is-checked
+            background-color: white
+            color: #f7f7f7
+          &:hover
+            background-color: #3b3b3b
+            color: #f7f7f7
+        #search-name1
+          color: #ffffff
+          width: 25%
+          display: inline-block
+          border-radius: 0
+          height: 50px
+          border: none
+          padding: 0 15px
+          background-color: #3b3b3b
+          outline: none
+          box-shadow: none
+          -webkit-appearance: none
+          float: left
+          margin-right: 15px
+        #search-name2
+          margin-right: 15px
+          float: left
+          width: 25%
+          border-radius: 0
+          height: 50px
+          color: #ffffff
+          padding: 0 15px
+          background-color: #3b3b3b
+          border: none
+          outline: none
+          -webkit-appearance: none
+          box-shadow: none
+
+    .reel-list-container
+      min-height: 100vh
+      padding: 0
+      .grid
+        overflow: hidden
+        display: none
+        .reel-image-item
+          padding: 2px
+          position: relative
+          .popup-vimeo
+            text-decoration: none
+            border: 0
+            outline: none
+            display: block
+            .reel-image
+              position: relative
+              height: 400px
+              transition: all 300ms ease-in-out
+              z-index: 2
+              .caption
+                position: absolute
+                bottom: 20px
+                left: 20px
+                .reel-title
+                  color: white
+                  font-size: 22px
+                  //text-transform: capitalize
+                  letter-spacing: 2px
+                .reel-date
+                  color: white
+                  margin: 0
+              &.description
+                background-color: #5f081a
+                .caption
+                  top: 50%
+                  transform: translateY(-50%)
+                  max-width: 80%
+                  left: 0
+                  right: 0
+                  margin: 0 auto
+                  .category-description
+                    line-height: 30px
+                    font-size: 16px
+                    color: white
+
+          .content-container
+            background-color: #f7f7f7
+            padding: 15px 0
+
+      #no-result
+
+        display: none
+        #result-text
+          text-align: center
+          marign: 0
+        &.active
+          display: block
+
+          opacity: 1
+          position: absolute
+          left: 0
+          right: 0
+          top: 50%
+          transform: translateY(-50%)
+
+  #reel-specific
+    position: relative
+    background-color: #f7f7f7
+    #video
+      position: relative
+      height: 700px
+      #video-bg
+        transition: background-image 500ms ease-in-out
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
+        height: inherit
+        .video-button-container
+          width: 100%
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          -webkit-transform: translateY(-50%)
+          -moz-transform: translateY(-50%)
+          -o-transform: translateY(-50%)
+          -ms-transform: translateY(-50%)
+          z-index: 5
+          .video-button
+            cursor: pointer
+            left: 0
+            right: 0
+            height: 100px
+          .caption
+            .caption-text
+              color: white
+              letter-spacing: 2px
+              text-align: center
+      .iframe-video-container
+        background-color: black
+        height: inherit
+        display: none
+        iframe
+          height: inherit
+          width: 100%
+
+    .video-description-container
+      margin: 35px auto
+      line-height: 45px
+      p
+        font-size: 18px
+        &:first-child:first-letter
+          font-size: 200%
+
+@media (max-width: 1440px)
+  #reel-list
+    .reel-list-container
+      padding: 0
+      .grid
+        .reel-image-item
+          .popup-vimeo
+            .reel-image
+              height: 350px
+
+  #reel-specific
+    #video
+      height: 550px
+
+
+
+
+
+
+

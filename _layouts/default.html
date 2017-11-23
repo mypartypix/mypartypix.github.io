@@ -18,9 +18,11 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  {% if page.url == "/" %}
   <link rel="stylesheet" href="/css/home.css">
-
+  {% else %}
+  <link rel="stylesheet" href="/css/{{ layout.css }}">
+  {% endif %}
 </head>
 <body>
 
@@ -33,28 +35,62 @@
 <script type="text/javascript" src="/js/modernizr.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-
 <script type="text/javascript" src="/js/main.js"></script>
+{{ layout.javascript }}
 
 
 {% if page.url == '/' or page.url == 'index.html' %}
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALPX1dx_E0P7Rx7o-aJMSieABxcY7FtR8&callback=initMap"></script>
 <script type="text/javascript">
-    //Form on submit
-    $("#form-content").on("submit",function(){
-        $("#ss-submit").attr("disabled", true);
-        setTimeout(function(){
-            $("#ss-submit").attr("disabled", false);
-        }, 1000);
-        $("#hidden_iframe").on('load',function () {
-            $("#modal-message").modal('show');
-            $("#form-content")[0].reset();
-            setTimeout(function(){
-                $("#modal-message").modal('hide');
-            }, 4000);
+    //on navbar scroll add brand logo
+    $('.navbar-collapse a').click(function(){
+        $(".navbar-collapse").collapse('hide');
+    });
+
+    $(function () {
+        if( window.pageYOffset > 50 && $(document).width() >= 992){
+            $('nav').addClass('navbar-shrink')
+            $('.navbar-brand-logo').css('display','block');
+
+            $(window).scroll(function() {
+                if ($(document).scrollTop() > 50 && $(document).width() >= 992) {
+                    $('nav').addClass('navbar-shrink');
+                    $('.navbar-brand-logo').css('display','block');
+                } else {
+                    $('nav').removeClass('navbar-shrink');
+                    $('.navbar-brand-logo').css('display','none');
+                }
+            });
+        }
+        else if( window.pageYOffset < 50 && $(document).width() >= 992){
+            $(window).scroll(function() {
+                if ($(document).scrollTop() > 50 && $(document).width() >= 992 ) {
+                    $('nav').addClass('navbar-shrink');
+                    $('.navbar-brand-logo').css('display','block');
+                } else {
+                    $('nav').removeClass('navbar-shrink');
+                    $('.navbar-brand-logo').css('display','none');
+                }
+            });
+        }
+
+        if($(document).width() <= 991 && window.pageYOffset > 50 || $(document).width() <= 991 && window.pageYOffset < 50 ){
+            $('nav').addClass('navbar-shrink');
+
+        }
+
+
+        var contactMenu = $('.navbar-menu').last();
+        contactMenu.on('click',function(){
+            $('html, body').animate({
+                scrollTop: $($(this).find('a').attr('href')).offset().top - 100
+            }, 500);
+            return false;
         });
     });
+
+
+
     //GMAP
     window.initMap = function() {
         var mapLocation = {lat: 14.553110, lng: 121.051385};

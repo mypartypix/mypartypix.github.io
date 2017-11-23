@@ -3,16 +3,17 @@
         <header class="header">OUR SERVICES</header>
     </div>
     <div class="content-section">
+
         {% for service in site.data.service %}
         <div class="col-md-4">
-            <a class="modal-link" data-toggle="modal" data-target="#modal-1">
+            <a class="modal-link" data-toggle="modal" data-target="#modal-{{ service.id }}">
                 <img src="/img/service/{{ service.image }}" class="image-section img-responsive center-block"/>
             </a>
             <span class="title-section">{{ service.title }}</span>
             <span class="description-section">{{ service.description }}</span>
         </div>
 
-        <div class="modal fade"  id="modal-1" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal fade"  id="modal-{{ service.id }}" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">

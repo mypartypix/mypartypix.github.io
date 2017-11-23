@@ -1,46 +1,10 @@
-//Font face section
-@font-face
-  font-family: 'Gotham-Black'
-  src: url('/fonts/gotham/Gotham-Black.ttf')
-
-@font-face
-  font-family: 'Gotham-Bold'
-  src: url('/fonts/gotham/Gotham-Bold.ttf')
-
-@font-face
-  font-family: 'Gotham-Book'
-  src: url('/fonts/gotham/Gotham-Book.ttf')
-
-@font-face
-  font-family: 'Gotham-Light'
-  src: url('/fonts/gotham/Gotham-Light.ttf')
-
-@font-face
-  font-family: 'Gotham-Medium'
-  src: url('/fonts/gotham/Gotham-Medium.ttf')
-
-@font-face
-  font-family: 'Gotham-Thin'
-  src: url('/fonts/gotham/Gotham-Thin.ttf')
-
-//Global Declaration
-body
-  font-family: 'Gotham-Book'
-  color: #3b3b3b
-
-
-
-.no-gutter
-  padding-left: 0
-  padding-right: 0
-
-
 //navbar
 nav
   transition: all 300ms ease
   &.navbar-default
-    background-color: transparent
-    border-color: transparent
+    background-color: transparent !important
+    border-color: transparent !important
+    box-shadow: none !important
     .container
       width: 100%
       height: inherit
@@ -219,6 +183,7 @@ nav
             color: #3b3b3b
             &:hover
               color: #3b3b3b
+
 #cover
   background-attachment: fixed
   background-image: url("/img/cover.jpg")
@@ -356,6 +321,7 @@ nav
       display: block
       outline: none
       text-decoration: none
+      cursor: pointer
       .image-section
         display: block
         font-size: 90px
@@ -550,22 +516,6 @@ nav
       font-size: 18px
       line-height: 24px
 
-
-
-
-footer
-  position: relative
-  padding-top: 30px
-  padding-bottom: 30px
-  background-color: #3b3b3b
-  .content-container
-    .section-copyright
-      color: #ffffff
-      text-transform: uppercase
-      display: block
-      font-size: 14px
-      font-family: "Gotham-Book"
-      text-align: center
 
 
 @media (min-width: 1500px)

@@ -1,0 +1,80 @@
+<div class="gallery-banner">
+    <div class="bg-overlay"></div>
+    <h2 class="banner">EVENT PHOTOS</h2>
+</div>
+
+<div id="gallery-list" class="container">
+    <div class="filter-container container-fluid no-gutter">
+        <div class="filters-button-group button-group visibile-md hidden-sm hidden-xs clearfix">
+            <input type="text" placeholder="search couple name" class="inputSearch form-control" id="search-name1">
+            {% for filter in site.data.buttonFilter %}
+            {% assign counter = counter | plus: 1%}
+
+            <div class="dropdown">
+                <button class="btn-isotope dropdown-toggle btn-main {% if counter == 1 %}is-checked{% endif %}" data-filter=".{{ filter.filter }}" data-toggle="dropdown">{{ filter.name }}
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    {% for sub-category in filter.sub-category %}
+                    <li class="button-item">
+                        <button class="btn-isotope" data-filter="{{ sub-category.filter }}">{{ sub-category.name }}</button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="no-gutter filters-button-group button-group category-nav-container hidden-lg hidden-md">
+        <div class="category-nav-mobile">
+            <a href="#" id="category-button" data-toggle="collapse" data-target="#navbar-category-collapse">Filter Menu <span class="caret"></span></a>
+        </div>
+        <div class="full-width no-gutter collapse navbar-collapse" id="navbar-category-collapse">
+            <ul class="category-nav">
+                <li>
+                    <input type="text" placeholder="search couple name" class="inputSearch form-control" id="search-name2">
+                </li>
+                {% assign counter = 0%}
+                {% for filter in site.data.buttonFilter %}
+                {% assign counter = counter | plus: 1%}
+                <li>
+                    <div class="dropdown">
+                        <button class="btn-isotope dropdown-toggle {% if counter == 1 %}is-checked{% endif %}" data-filter=".{{ filter.filter }}" data-toggle="dropdown">{{ filter.name }}
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            {% for sub-category in filter.sub-category %}
+                            <li class="button-item">
+                                <button class="btn-isotope" data-filter=".{{ sub-category.filter }}">{{ sub-category.name }}</button>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid reel-list-container">
+        <div class="grid">
+            {% assign sorted-reel = site.video | sort: "section-rank" %}
+            {% for reel-list in sorted-reel %}
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 no-gutter reel-image-item {{ reel-list.type }}" data-celebrity="{{ reel-list.rank-celebrity }}">
+                <span style="display: none" class="celebrity">{{ reel-list.rank-celebrity }}</span>
+                <a class="popup-vimeo" href="{{ reel-list.url }}" data-id="{{ reel-list.section-rank }}">
+                    <div class="reel-image"  style="background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ),url('{{ reel-list.image-small }}');background-size: cover; background-position: center center;">
+                        <div class="caption">
+                            <h1 class="reel-title">{{ reel-list.title }}</h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="no-result">
+            <h2 id="result-text">Sorry, no result found.</h2>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+- id: 1
+  name: ALL
+  hasSub: true
+  sub-category:
+    - name: "All"
+      filter: "*"
+    - name: "Party"
+      filter: ".celebrity"
+    - name: "Birthday"
+      filter: ".test2"
+    - name: "Events"
+      filter: ".test3"
+
+
+
+
