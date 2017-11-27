@@ -17,11 +17,11 @@
             {% for navbarMenu in site.data.navbar %}
             {% if navbarMenu.id != 3 %}
             <li {% if page.url == navbarMenu.url %} class="navbar-menu active-menu"  {% else %} class="navbar-menu" {% endif %}>
-                <a  href="{{ navbarMenu.url }}">{{ navbarMenu.title | upcase }}</a>
+                <a  href="{{ navbarMenu.slugID }}">{{ navbarMenu.title | upcase }}</a>
             </li>
             {% else %}
             <li class="navbar-brand-logo hidden-sm hidden-xs" {% if page.url !="/" %} style="display: block"{% endif %}>
-                <a href="{{ navbarMenu.url }}">
+                <a href="{{ navbarMenu.slugID }}">
                     <img src="{{ navbarMenu.image }}" class="brand-logo"/>
                 </a>
             </li>

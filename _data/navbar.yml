@@ -1,6 +1,6 @@
 - id: 1
   title: "Gallery"
-  slugID:
+  slugID: "/gallery/"
 
 - id: 2
   title: "Services"
@@ -8,7 +8,7 @@
 
 - id: 3
   image:  "/img/brand-logo.png"
-  slugID:
+  slugID: "/"
 
 - id: 4
   title: "Own-A-Booth"
