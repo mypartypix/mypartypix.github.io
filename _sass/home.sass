@@ -5,6 +5,9 @@ nav
     background-color: transparent !important
     border-color: transparent !important
     box-shadow: none !important
+    //background-color: white !important
+    //box-shadow: 0px 0px 1px 0.5px #D2D0D0
+
     .container
       width: 100%
       height: inherit
@@ -98,7 +101,7 @@ nav
               -o-transform: translate(0, 101%)
               transform: translate(0, 101%)
           &.active-menu
-            border: 1px solid #5f081a
+            border: 1px solid white
             &:hover
               &:before
                 -webkit-transform: none
@@ -186,15 +189,24 @@ nav
 
 #cover
   background-attachment: fixed
-  background-image: url("/img/cover.jpg")
+  background-image: url("/img/cover-bg.jpg")
   background-size: cover
   background-repeat: no-repeat
+  background-position: center center
   position: relative
   height: calc(100vh - 64px)
   min-height: 100vh
   .container-fluid
     height: inherit
+    #bg-overlay
+      position: absolute
+      z-index: 1
+      height: 100%
+      width: 100%
+      top: 0
+      background-color: rgba(0,0,0,0.3)
     .logo-container
+      z-index: 2
       position: relative
       top: 50%
       transform: translateY(-50%)
@@ -253,9 +265,9 @@ nav
 
 #gallery
   position: relative
-  background-image: url("/img/bg-gallery.jpg")
+  background-image: url("/img/gallery-bg.jpg")
   background-size: cover
-  background-position: center center
+  background-position: top center
   background-repeat: no-repeat
   background-attachment: fixed
   .content-section
@@ -316,17 +328,11 @@ nav
       text-align: center
       display: block
   .content-section
-    .modal-link
-      color: #3b3b3b
+    .image-section
       display: block
-      outline: none
-      text-decoration: none
-      cursor: pointer
-      .image-section
-        display: block
-        font-size: 90px
-        margin-bottom: 30px
-        text-align: center
+      font-size: 90px
+      margin-bottom: 30px
+      text-align: center
     .title-section
       font-size: 22px
       text-align: center
@@ -336,6 +342,22 @@ nav
       display: block
       line-height: 24px
       text-align: center
+  .rate-button-container
+    margin-top: 30px
+    margin-bottom: 50px
+    .modal-link
+      color: white
+      display: table
+      margin-left: auto
+      margin-right: auto
+      text-transform: uppercase
+      padding: 20px 30px
+      background-color: #E91E63
+      text-decoration: none
+      outline: none
+      cursor: pointer
+
+
 
 
 #booth
