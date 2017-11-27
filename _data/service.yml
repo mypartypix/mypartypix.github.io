@@ -1,14 +1,14 @@
 - id: 1
   title: "Photobooth Rental"
   description: "Complete setup with two friendly crew!"
-  image: "sample-service.jpg"
+  image: "photobooth.jpg"
 
 - id: 2
   title: "Party Needs"
   description: "Party Decor, Food "
-  image: "sample-service.jpg"
+  image: "celebration.jpg"
 
 - id: 3
   title: "Other Services"
   description: "Flipbook, Hashtag instagram photo print, Photoman"
-  image: "sample-service.jpg"
+  image: "other.jpg"
