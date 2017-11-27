@@ -4,12 +4,10 @@
   sub-category:
     - name: "All"
       filter: "*"
-    - name: "Party"
-      filter: ".celebrity"
-    - name: "Birthday"
-      filter: ".test2"
-    - name: "Events"
-      filter: ".test3"
+    - name: "Raw"
+      filter: ".raw"
+    - name: "Edited"
+      filter: ".edited"
 
 
 
