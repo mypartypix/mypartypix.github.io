@@ -59,14 +59,14 @@
 
     <div class="container-fluid reel-list-container">
         <div class="grid">
-            {% assign sorted-reel = site.video | sort: "section-rank" %}
-            {% for reel-list in sorted-reel %}
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 no-gutter reel-image-item {{ reel-list.type }}" data-celebrity="{{ reel-list.rank-celebrity }}">
+            {% assign sorted-gallery = site.data.gallery | sort: "rank" %}
+            {% for gallery-list in sorted-gallery reversed %}
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 no-gutter reel-image-item {{ gallery-list.type }}" data-celebrity="{{ gallery-list.rank-celebrity }}">
                 <span style="display: none" class="celebrity">{{ reel-list.rank-celebrity }}</span>
-                <a class="popup-vimeo" href="{{ reel-list.url }}" data-id="{{ reel-list.section-rank }}">
-                    <div class="reel-image"  style="background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ),url('{{ reel-list.image-small }}');background-size: cover; background-position: center center;">
+                <a class="popup-vimeo" href="{{ gallery-list.link }}" data-id="{{ gallery-list.rank }}" target="_blank">
+                    <div class="reel-image"  style="background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ),url('{{ gallery-list.image }}');background-size: cover; background-position: top center;">
                         <div class="caption">
-                            <h1 class="reel-title">{{ reel-list.title }}</h1>
+                            <h1 class="reel-title">{{ gallery-list.title }}</h1>
                         </div>
                     </div>
                 </a>
