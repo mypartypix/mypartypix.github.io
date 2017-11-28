@@ -14,10 +14,17 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-right-collapse">
         <ul class="nav navbar-nav">
+            <li class="navbar-menu">
+                <a href="/gallery/" target="_blank">GALLERY</a>
+            </li>
             {% for navbarMenu in site.data.navbar %}
             {% if navbarMenu.id != 3 %}
             <li {% if page.url == navbarMenu.url %} class="navbar-menu active-menu"  {% else %} class="navbar-menu" {% endif %}>
-                <a  href="{{ navbarMenu.slugID }}">{{ navbarMenu.title | upcase }}</a>
+                {% if page.url == '/' %}
+                <a  href="#{{ navbarMenu.slugID }}" class="navbar-link">{{ navbarMenu.title | upcase }}</a>
+                {% else %}
+                <a  href="/#{{ navbarMenu.slugID }}" class="navbar-link">{{ navbarMenu.title | upcase }}</a>
+                {% endif %}
             </li>
             {% else %}
             <li class="navbar-brand-logo hidden-sm hidden-xs" {% if page.url !="/" %} style="display: block"{% endif %}>
