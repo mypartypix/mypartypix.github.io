@@ -7,32 +7,29 @@ javascript: >
     <script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
     <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript">
-
-        // isotope setting
-        var nameRegex;
-        var buttonFilter1 = "*";
+        // quick search regex
+        var qsRegex;
+        var filterValue;
         var $container = $('.grid');
-        $container.imagesLoaded( function(){
-            $container.isotope({
-                itemSelector: '.reel-image-item',
-                layoutMode: 'fitRows',
-                sortAscending: true,
-                getSortData: {
-                    celebrity: '.celebrity',
-                    weight: function( itemElem ) {
-                        var weight = $( itemElem ).find('.celebrity').text();
-                        return parseFloat( weight.replace( /[\(\)]/g, '') );
-                    }
-                },
+        // init Isotope
+        $container = $(".grid").isotope({
+            itemSelector: '.reel-image-item',
+            layoutMode: 'fitRows',
+            sortAscending: true,
+            filter: function() {
+                var $this = $(this);
+                var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
+                var selectResult = filterValue ? $this.is(filterValue) : true;
+                return searchResult  && selectResult;
+            }
+        });
 
-                filter: function () {
-                    var $this = $(this);
-                    var searchResult1 = nameRegex ? $this.text().match(nameRegex) : true;
-                    var searchResult2 = nameRegex ? $this.text().match(nameRegex) : true;
-                    var buttonResult = $this.is(buttonFilter1);
-                    return searchResult1 && buttonResult || searchResult2 && buttonResult;
-                },
-            });
+        // bind filter on select change
+        $(".filters-2").on("change", function() {
+            // get filter value from option value
+            filterValue = $(this).val();
+            console.log(filterValue);
+            $container.isotope();
         });
 
         $container.on( 'arrangeComplete', function( event, filteredItems ) {
@@ -45,32 +42,21 @@ javascript: >
         });
 
 
-        $('.filters-button-group').on('click', 'button', function () {
-            buttonFilter1 = $(this).attr('data-filter');
-            $container.isotope({});
-            //            return false;
-        });
 
-        $('.button-group').each(function (i, slidein) {
-            var $slidein = $(slidein);
-            $slidein.on('click', 'button', function () {
-                $slidein.find('.is-checked').removeClass('is-checked');
-                $(this).addClass('is-checked');
-
-            });
-        });
-
-
-        var $quicksearch1 = $('#search-name1').keyup(debounce(function () {
-            nameRegex = new RegExp($quicksearch1.val(), 'gi');
-            $container.isotope();
-        }));
-
-        var $quicksearch2 = $('#search-name2').keyup(debounce(function () {
-            nameRegex = new RegExp($quicksearch2.val(), 'gi');
-            $container.isotope();
-        }));
-
+        // use value of search field to filter
+        var $quicksearch1 = $("#quicksearch1").keyup(
+            debounce(function() {
+                qsRegex = new RegExp($quicksearch1.val(), "gi");
+                $container.isotope();
+            })
+        );
+        var $quicksearch2 = $("#quicksearch2").keyup(
+            debounce(function() {
+                qsRegex = new RegExp($quicksearch2.val(), "gi");
+                $container.isotope();
+            })
+        );
+        // debounce so filtering doesn't happen every millisecond
         function debounce(fn, threshold) {
             var timeout;
             return function debounced() {
@@ -81,15 +67,9 @@ javascript: >
                     fn();
                     timeout = null;
                 }
-
                 setTimeout(delayed, threshold || 100);
             };
         }
-
-        function escapeRegExp(str) {
-            return str.replace(/[\-\[\]\/\{\}\(\)\.fea\+\?\.\\\^\$\|]/g, "\\$&");
-        }
-        $container.show();
     </script>
 
 ---

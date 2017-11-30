@@ -4,56 +4,26 @@
 </div>
 
 <div id="gallery-list" class="container">
-    <div class="filter-container container-fluid no-gutter clearfix">
-        <div class="filters-button-group button-group visibile-md hidden-sm hidden-xs clearfix">
-            <input type="text" placeholder="search couple name" class="inputSearch form-control" id="search-name1">
-            {% for filter in site.data.buttonFilter %}
-            {% assign counter = counter | plus: 1%}
-
-            <div class="dropdown">
-                <button class="btn-isotope dropdown-toggle btn-main {% if counter == 1 %}is-checked{% endif %}" data-filter=".{{ filter.filter }}" data-toggle="dropdown">{{ filter.name }}
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    {% for sub-category in filter.sub-category %}
-                    <li class="button-item">
-                        <button class="btn-isotope" data-filter="{{ sub-category.filter }}">{{ sub-category.name }}</button>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
-
-        </div>
+    <div class="menu-container visible-lg visible-md hidden-sm hidden-xs">
+        <input type="text" id="quicksearch1" class="quicksearch" placeholder="Search Name" />
+        <select class="filters-2">
+            <option  value="*">Show All</option>
+            <option value=".raw">Raw</option>
+            <option value=".edited">Edited</option>
+        </select>
     </div>
 
-    <div class="no-gutter filters-button-group button-group category-nav-container hidden-lg hidden-md">
+    <div class="menu-container hidden-lg hidden-md">
         <div class="category-nav-mobile">
             <a href="#" id="category-button" data-toggle="collapse" data-target="#navbar-category-collapse">Filter Menu <span class="caret"></span></a>
         </div>
         <div class="full-width no-gutter collapse navbar-collapse" id="navbar-category-collapse">
-            <ul class="category-nav">
-                <li>
-                    <input type="text" placeholder="search couple name" class="inputSearch form-control" id="search-name2">
-                </li>
-                {% assign counter = 0%}
-                {% for filter in site.data.buttonFilter %}
-                {% assign counter = counter | plus: 1%}
-                <li>
-                    <div class="dropdown">
-                        <button class="btn-isotope dropdown-toggle {% if counter == 1 %}is-checked{% endif %}" data-filter=".{{ filter.filter }}" data-toggle="dropdown">{{ filter.name }}
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            {% for sub-category in filter.sub-category %}
-                            <li class="button-item">
-                                <button class="btn-isotope" data-filter=".{{ sub-category.filter }}">{{ sub-category.name }}</button>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </li>
-                {% endfor %}
-
-            </ul>
+            <input type="text" id="quicksearch2" class="quicksearch" placeholder="Search" />
+            <select class="filters-2">
+                <option  value="*">Show All</option>
+                <option value=".raw">Raw</option>
+                <option value=".edited">Edited</option>
+            </select>
         </div>
     </div>
 
