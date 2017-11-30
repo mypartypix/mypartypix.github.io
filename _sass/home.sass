@@ -5,8 +5,6 @@ nav
     background-color: transparent !important
     border-color: transparent !important
     box-shadow: none !important
-
-
     .container
       width: 100%
       height: inherit
@@ -235,7 +233,7 @@ nav
     margin-bottom: 30px
     .header
       margin: 0
-      font-family: "Gotham-Book"
+      font-family: "Gotham-Medium"
       text-transform: uppercase
       font-size: 44px
       letter-spacing: 4px
@@ -248,6 +246,7 @@ nav
       margin-bottom: 30px
       text-align: center
     .title-section
+      font-family: "Gotham-Medium"
       font-size: 22px
       text-align: center
       margin-bottom: 10px
@@ -320,7 +319,7 @@ nav
     margin-bottom: 30px
     .header
       margin: 0
-      font-family: "Gotham-Book"
+      font-family: "Gotham-Medium"
       text-transform: uppercase
       font-size: 44px
       letter-spacing: 4px
@@ -333,6 +332,7 @@ nav
       margin-bottom: 30px
       text-align: center
     .title-section
+      font-family: "Gotham-Medium"
       font-size: 22px
       text-align: center
       margin-bottom: 10px
@@ -368,8 +368,8 @@ nav
     padding-top: 113px
     padding-bottom: 113px
     .header
+      font-family: "Gotham-Medium"
       margin-bottom: 10px
-      font-family: "Gotham-Book"
       text-transform: uppercase
       font-size: 44px
       letter-spacing: 4px
@@ -393,7 +393,7 @@ nav
     padding-bottom: 100px
     #header-section
       #header
-        font-family: "Gotham-Book"
+        font-family: "Gotham-Medium"
         text-transform: uppercase
         font-size: 44px
         letter-spacing: 4px
@@ -540,9 +540,265 @@ nav
 
 
 @media (min-width: 1500px)
+  #cover
+    .container-fluid
+      .logo-container
+        .logo
+          height: 180px
+        .intro-text
+          font-size: 26px
+
+  #gallery
+    .content-section
+      .intro-text
+        max-width: 51%
+
   #contact
     .right-section
       #contact-container
         margin-left: 22vh
+
+@media (max-width: 1200px)
+  #gallery
+    .content-section
+      .intro-text
+        max-width: 71%
+
+  #contact
+    .right-section
+      #contact-container
+        margin-left: 15px
+
+
+@media (max-width: 991px)
+  #cover
+    height: auto
+    min-height: 0
+    .container-fluid
+      .logo-container
+        padding-top: 150px
+        padding-bottom: 150px
+        top: 0
+        transform: none
+        -webkit-transform: none
+        -moz-transform: none
+        -o-transform: none
+        -ms-transform: none
+
+  #whyus
+    .content-section
+      .description-section
+        text-align: center
+      .icon-section
+        margin-top: 50px
+
+  #gallery
+    .content-section
+      .intro-text
+        max-width: 100%
+        padding-left: 15px
+        padding-right: 15px
+        text-align: center
+        font-size: 28px
+
+  #service
+    .content-section
+      .title-section
+        margin-bottom: 5px
+      .image-section
+        max-width: 60%
+        min-width: 60%
+
+      .description-section
+        margin-bottom: 50px
+    .rate-button-container
+      margin-top: 0
+  .modal-content
+    .modal-body
+      .header-section
+        .header
+          font-size: 38px
+        .header-text
+          font-size: 16px
+      .promo-inclusion-container
+        width: 100%
+
+  #booth
+    .left-section
+      padding-top: 30px
+      padding-bottom: 10px
+      .description
+        max-width: 80%
+        min-width: 80%
+        margin-left: auto
+        margin-right: auto
+
+  #contact
+    .right-section
+      #contact-container
+        ul
+          .contact-list
+            text-align: center
+
+
+@media (max-width: 767px)
+  #cover
+    .container-fluid
+      .logo-container
+        .logo
+          height: 130px
+        .intro-text
+          margin-top: 50px
+          line-height: 0
+          font-size: 22px
+
+
+  #whyus
+    .header-section
+      .header
+        font-size: 38px
+
+  #gallery
+    .content-section
+      .intro-text
+        font-size: 24px
+      .gallery-button
+        padding: 20px 30px
+        font-size: 14px
+
+  #service
+    .header-section
+      .header
+        font-size: 38px
+
+  #booth
+    .left-section
+      .header
+        font-size: 38px
+
+  #contact
+    .right-section
+      #header-section
+        #header
+          font-size: 38px
+
+
+  .modal-content
+    padding-top: 80px
+    .close-modal
+      top: 20px
+      right: 35px
+      width: 35px
+      height: 35px
+      .lr
+        height: 35px
+        .rl
+          height: 35px
+    .modal-body
+      .header-section
+        .header-text
+          font-size: 14px
+      .promo-content-section
+        .promo-content-list
+          .promo-content
+            min-height: 250px
+      .bottom-text
+        font-size: 16px
+
+@media (max-width: 568px)
+  #cover
+    .container-fluid
+      .logo-container
+        .logo
+          height: auto
+          max-width: 80%
+          min-width: 80%
+        .intro-text
+          line-height: normal
+          margin-top: 25px
+          font-size: 16px
+
+  #whyus
+    .header-section
+      .header
+        font-size: 28px
+    .content-section
+      .icon-section
+        font-size: 70px
+      .title-section
+        font-size: 18px
+      .description-section
+        max-width: 100%
+
+  #gallery
+    .content-section
+      padding: 120px 0
+      .intro-text
+        font-size: 22px
+
+  #service
+    .header-section
+      .header
+        font-size: 28px
+    .content-section
+      .image-section
+        max-width: 90%
+        min-width: 90%
+
+  #booth
+    .left-section
+      .header
+        font-size: 28px
+        margin-bottom: 30px
+      .description
+        max-width: 100%
+        min-width: 0
+
+  #contact
+    .right-section
+      padding-top: 50px
+      padding-bottom: 50px
+      #header-section
+        #header
+          font-size: 28px
+      #contact-container
+        margin-left: 0
+        ul
+          .contact-list
+            text-align: left
+            .contact-icon
+              display: block
+              text-align: center
+              width: auto
+              margin-bottom: 15px
+            .contact-text
+              margin-left: 0
+              display: block
+              text-align: center
+              font-size: 14px
+
+
+  .modal-content
+    .promo-content-section
+      .promo-content-list
+        .promo-header
+          .promo-hour
+            font-size: 22px
+          .promo-price
+            font-size: 16px
+    .modal-body
+      .promo-inclusion-container
+        padding-left: 0
+        padding-right: 0
+      .header-section
+        &#package-header
+          padding-bottom: 0
+          .header
+            font-size: 18px
+
+
+
+
+
 
 

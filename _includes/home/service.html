@@ -33,7 +33,7 @@
 
                 <div class="promo-container clearfix">
                     {% for promo in site.data.promo %}
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-6">
                         <div class="promo-content-section">
                             <div class="promo-content-list">
                                 <div {% if promo.id == 6 %} id="promo-header-last" {% endif %}  class="promo-header" style="background-color: #{{ promo.color }};">
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="promo-inclusion-container clearfix">
-                    <div class="left-section col-md-6">
+                    <div class="left-section col-md-6 col-sm-12 col-xs-12">
                         <ul>
                             {% for package in site.data.package-inclusion limit: 6 %}
                             <li class="promo-list">
@@ -69,7 +69,7 @@
                             {% endfor %}
                         </ul>
                     </div>
-                    <div class="right-section col-md-6">
+                    <div class="right-section col-md-6 col-sm-12 col-xs-12">
                         <ul>
                             {% for package in site.data.package-inclusion offset: 6 %}
                             <li class="promo-list">

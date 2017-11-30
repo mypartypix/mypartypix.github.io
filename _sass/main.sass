@@ -148,8 +148,6 @@ nav
             &:hover
               color: #3b3b3b
 
-
-
 footer
   position: relative
   padding-top: 30px
@@ -163,3 +161,132 @@ footer
       font-size: 14px
       font-family: "Gotham-Book"
       text-align: center
+
+@media (max-width: 991px)
+  nav
+    position: relative
+    margin-bottom: 0
+    &.navbar-default
+      .container
+        width: 100%
+        .navbar-header
+          margin-left: 0
+          margin-right: 0
+          float: none
+          .navbar-brand
+            margin-left: 30px
+            margin-top: 20px
+            margin-bottom: 20px
+            .brand-logo
+              height: 30px
+        .navbar-right
+          margin: 15px auto
+          float: none !important
+          display: block !important
+          padding-left: 0
+          .navbar-list
+            width: 100%
+            margin: 0 auto
+            transform: none
+            float: none
+            .navbar-link
+              text-align: center
+              font-size: 14px
+              padding-top: 20px
+              padding-bottom: 20px
+
+  .navbar-toggle
+    display: block
+    background-color: #3b3b3b
+    border-color: transparent !important
+    position: absolute
+    right: 0
+    top: 0
+    margin: 26px 30px
+    padding: 9px 6px
+
+    &:hover, &:focus
+      background-color: #3b3b3b !important
+    .icon-bar
+      background-color: white !important
+      height: 2px
+      width: 25px
+  .navbar-collapse
+    box-shadow: none
+    -webkit-box-shadow: none
+    background-color: white
+    border: 1px solid #e7e7e7 !important
+    margin-top: 15px
+    max-height: none !important
+  .navbar-collapse.collapse
+    border: 1px solid #e7e7e7 !important
+    display: none !important
+  .collapse.in
+    border: 1px solid #e7e7e7 !important
+    display: block !important
+    overflow-x: hidden !important
+
+  nav
+    &.navbar-default
+      .container
+        .navbar-header
+          .navbar-brand
+            padding: 0
+            margin: 0
+            float: none
+            .brand-logo
+              display: table
+              margin-left: auto
+              margin-right: auto
+              height: 60px
+              margin-top: 15px
+              margin-bottom: 15px
+              filter: brightness(0) invert(0)
+              -webkit-filter: brightness(0) invert(0)
+              -moz-filter: brightness(0) invert(0)
+              -o-filter: brightness(0) invert(0)
+              -ms-filter: brightness(0) invert(0)
+
+  nav
+    &.navbar-shrink
+      .container
+        .navbar-nav
+          .navbar-menu
+            float: none
+            text-align: center
+            a
+              display: inline-block
+
+
+@media (max-width: 991px)
+  body
+    margin-top: 91px
+
+
+@media (max-width: 767px)
+  .collapse
+    &.in
+      border-bottom: none !important
+      border-left: none !important
+      border-right: none !important
+      border-top: 1px solid #e7e7e7
+
+@media (max-width: 568px)
+  body
+    margin-top: 80px
+
+  nav
+    &.navbar-default
+      .container
+        .navbar-header
+          .navbar-brand
+            .brand-logo
+              height: 50px
+
+  .navbar-toggle
+    margin: 25px 10px 25px
+    padding: 5px 6px
+    .icon-bar
+      width: 20px
+
+
