@@ -260,7 +260,16 @@ footer
 
 @media (max-width: 991px)
   body
-    margin-top: 91px
+    margin-top: 91px !important
+
+  nav
+    &.navbar-default
+      .container
+        .navbar-header
+          .navbar-brand
+            display: table !important
+            margin-left: auto !important
+            margin-right: auto !important
 
 
 @media (max-width: 767px)
