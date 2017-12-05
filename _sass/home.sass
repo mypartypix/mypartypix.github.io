@@ -572,18 +572,13 @@ nav
 
 @media (max-width: 991px)
   #cover
-    height: auto
+    background-attachment: scroll
+    background-image: url("/img/cover-tablet.jpg")
+    background-position: top center
     min-height: 0
+    height: calc(100vh - 90px)
     .container-fluid
       .logo-container
-        padding-top: 150px
-        padding-bottom: 150px
-        top: 0
-        transform: none
-        -webkit-transform: none
-        -moz-transform: none
-        -o-transform: none
-        -ms-transform: none
         .logo
           height: 150px
 
@@ -707,10 +702,33 @@ nav
       .bottom-text
         font-size: 16px
 
-@media (max-width: 568px)
+@media (max-width: 800px ) and (orientation: landscape)
   #cover
+    height: auto
     .container-fluid
       .logo-container
+        top: 0
+        transform: none
+        -webkit-transform: none
+        -moz-transform: none
+        -o-transform: none
+        -ms-transform: none
+        padding: 155px 0
+
+
+@media (max-width: 568px)
+  #cover
+    height: auto
+    background-image: url("/img/cover-mobile.jpg")
+    .container-fluid
+      .logo-container
+        top: 0
+        transform: none
+        -webkit-transform: none
+        -moz-transform: none
+        -o-transform: none
+        -ms-transform: none
+        padding: 180px 0
         .logo
           height: auto
           max-width: 80%
@@ -744,8 +762,8 @@ nav
         font-size: 28px
     .content-section
       .image-section
-        max-width: 90%
-        min-width: 90%
+        max-width: 75%
+        min-width: 75%
 
   #booth
     .left-section
@@ -797,6 +815,8 @@ nav
           padding-bottom: 0
           .header
             font-size: 18px
+
+
 
 
 
