@@ -137,17 +137,5 @@
   image: "https://scontent.fmnl4-6.fna.fbcdn.net/v/t31.0-8/23415269_1594043190661659_3455962506044081691_o.jpg?oh=925fd584711eccc37b2766db8ce18abf&oe=5A8C929B"
   link: "https://www.facebook.com/pg/partypixphotobooth/photos/?tab=album&album_id=1594043157328329"
   
-- rank: 24
-  title: "Test Raw"
-  type: "raw"
-  image: "https://res.cloudinary.com/mypartypixphotobooth/image/upload/v1513156493/test/test.jpg"
-  link: "https://drive.google.com/drive/folders/1qlJJolQVEx0TZ0HbVStn7Nl4s4rAOgkQ?usp=sharing"
   
-  
-- rank: 25
-  title: "Test Edited"
-  type: "edited"
-  image: "https://res.cloudinary.com/mypartypixphotobooth/image/upload/v1513156493/test/test.jpg"
-  link: "https://drive.google.com/drive/folders/1qlJJolQVEx0TZ0HbVStn7Nl4s4rAOgkQ?usp=sharing"
-
 
